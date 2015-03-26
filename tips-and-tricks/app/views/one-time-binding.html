@@ -1,0 +1,39 @@
+<h3>One Time Binding</h3>
+
+<button ng-click="vm.usingOneTimeBinding = !vm.usingOneTimeBinding">With{{ "vm.usingOneTimeBinding ? 'out' : ''}} One Time binding</button>
+
+<h4>In ng-repeat</h4>
+
+<div ng-if="!vm.usingOneTimeBinding">
+  <div ng-repeat="item in vm.users track by $index">
+    {{ item.username }}
+  </div>
+</div>
+
+<div ng-if="vm.usingOneTimeBinding">
+  <div ng-repeat="item in ::vm.users track by $index">
+    {{ ::item.username }}
+  </div>
+</div>
+
+
+<h4>In ng-if</h4>
+
+<div ng-if="vm.usingOneTimeBinding">
+  <div ng-if="vm.user.loggedIn">User is logged</div>
+</div>
+
+<div ng-if="vm.usingOneTimeBinding">
+  <div ng-if="::vm.user.loggedIn">User is logged</div>
+</div>
+
+
+<h4>In ng-class</h4>
+
+<div ng-if="!vm.usingOneTimeBinding">
+  <div ng-class="{ 'my-class': vm.user.loggedIn }"></div>
+</div>
+
+<div ng-if="vm.usingOneTimeBinding">
+  <div ng-class="::{ 'my-class': vm.user.loggedIn }"></div>
+</div>

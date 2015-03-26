@@ -1,0 +1,15 @@
+<p>This is the ng-react view.</p>
+
+<button ng-click="vm.usingReact = !vm.usingReact">With{{ vm.usingReact ? 'out' : ''}} React</button>
+
+<p>vm.usingReact: {{vm.usingReact}}</p>
+<input type="text" ng-model="vm.message" />
+
+<div ng-if="vm.usingReact === true">
+  <div my-react-message>
+    <div id="example"></div>
+  </div>
+</div>
+<div ng-if="vm.usingReact === false">
+  <div my-message></div>
+</div>

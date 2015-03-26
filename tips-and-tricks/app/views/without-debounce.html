@@ -1,0 +1,12 @@
+<form autocomplete="off" role="form">
+  <div class="form-group">
+    <fieldset>
+      <input type="search" name="search" id="search" placeholder="Search..." ng-model="vm.searchItem" class="form-control" />
+    </fieldset>
+  </div>
+</form>
+<ul>
+  <li ng-repeat="item in vm.users | myFilter:vm.searchItem">
+    {{item.firstName}}
+  </li>
+</ul>

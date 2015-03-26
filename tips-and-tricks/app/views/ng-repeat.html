@@ -1,0 +1,25 @@
+<p>This is the ng-repeat view.</p>
+
+
+<button ng-click="vm.ngRepeatTimerStart();">With{{ vm.usingTrackBy ? 'out' : ''}} Track by in repeat</button>
+
+<p>vm.usingTrackBy: {{ vm.usingTrackBy }}</p>
+<div ng-if="vm.usingTrackBy === true">
+  <table>
+    <tr ng-repeat-start="item in vm.users track by item.firstName">{{ item.firstName }}</tr>
+    <tr ng-repeat-end>
+    {{ vm.ngRepeatTimerEnd() }}
+    {{ vm.finalTimer }}
+    </tr>
+  </table>
+</div>
+
+<div ng-if="vm.usingTrackBy === false">
+  <table>
+    <tr ng-repeat-start="item in vm.users">{{ item.firstName }}</tr>
+    <tr ng-repeat-end>
+    {{ vm.ngRepeatTimerEnd() }}
+    {{ vm.finalTimer }}
+    </tr>
+  </table>
+</div>

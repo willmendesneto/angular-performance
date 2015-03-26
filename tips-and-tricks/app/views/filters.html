@@ -1,0 +1,11 @@
+<h3>Using filter x using javascript functional</h3>
+
+<button ng-click="vm.usingFilters = !vm.usingFilters">With{{ vm.usingFilters ? 'out' : ''}} Filters</button>
+
+<div ng-if="vm.usingFilters === true">
+  <div ng-include="'views/using-filters.html'"></div>
+</div>
+
+<div ng-if="vm.usingFilters === false">
+  <div ng-include="'views/using-map.html'"></div>
+</div>

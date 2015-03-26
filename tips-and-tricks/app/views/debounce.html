@@ -1,0 +1,10 @@
+
+<button ng-click="vm.usingDebounce = !vm.usingDebounce">With{{ vm.usingDebounce ? 'out' : ''}} Debounce</button>
+
+<div ng-if="vm.usingDebounce === true">
+  <div ng-include="'views/using-debounce.html'"></div>
+</div>
+
+<div ng-if="vm.usingDebounce === false">
+  <div ng-include="'views/without-debounce.html'"></div>
+</div>
